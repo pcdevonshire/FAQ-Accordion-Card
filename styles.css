@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+*, 
+*::after, 
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --black: hsl(238, 29%, 16%);
+    --red: hsl(14, 88%, 65%);
+    --violet: hsl(273, 75%, 66%);
+    --blue: hsl(240, 73%, 65%);
+    --darkGray: hsl(237, 12%, 33%);
+    --gray: hsl(240, 6%, 50%);
+    --white: hsl(240, 5%, 91%);
+    --Kumbh: 'Kumbh Sans', sans-serif;
+}
+
+::selection {
+    color: var(--white);
+    background-color: var(--violet);
+}
+
+body {
+    background: linear-gradient(180deg, rgba(34,42,53,1) 0%, rgba(175,103,233,1) 0%, rgba(101,101,231,1) 100%);
+    min-height: 100vh;
+    min-width: 375px;
+    max-width: 1980px;
+    overflow-x: hidden;
+    margin: 0 auto;
+    display: grid;
+    place-items: center;
+    padding: 10em 1em;
+    font-family: var(--Kumbh);
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.card {
+    background-color: var(--white);
+    background-image: url(images/bg-pattern-mobile.svg);
+    background-repeat: no-repeat;
+    background-position: center 5px;
+    background-size: calc(90%-2em);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    border-radius: 15px;
+    padding: 0 2em;
+    max-width: 500px;
+}
+
+.card > img {
+    margin: 0 auto;
+    width: 90%;
+    transform: translateY(-115px);
+}
+
+.text {
+    margin-bottom: 3em;
+    max-width: 330px;
+}
+
+h1 {
+    color: var(--black);
+    font-size: 32px;
+    text-align: center;
+    margin: -1.5em 0 1em 0;
+}
+
+.question {
+    border-bottom: 1px solid var(--gray);
+    padding: 1em 0;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5em;
+    transition: all 0.3s;
+}
+
+.flex:hover {
+    cursor: pointer;
+}
+
+p {
+    font-size: 14px;
+}
+
+.flex p {
+    color: var(--darkGray);
+    transition: color 0.3s;
+}
+
+.flex p:hover {
+    color: var(--red);
+}
+
+.question > p {
+    color: var(--gray);
+    display: none;
+}
+
+a {
+    color: var(--red);
+    text-decoration: none;
+}
+
+@media only screen and (min-width: 768px) {
+
+    .card {
+        background-image: url(images/bg-pattern-desktop.svg);
+        background-repeat: no-repeat;
+        background-position: -475px -200px;
+        background-size: 100%;
+        padding: 5em 5em 5em 0;
+        max-width: 812px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        overflow-x: hidden;
+    }
+    
+    .card > img {
+        margin: 0;
+        width: 55%;
+        transform: translateY(0) translateX(-75px);
+    }
+    
+    .text {
+        width: 45%;
+        margin-bottom: 0;
+    }
+    
+    h1 {
+        text-align: left;
+        margin: 0 0 1em 0;
+    }
+
+}
+
+
+

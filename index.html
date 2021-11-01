@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="hsl(245, 75%, 52%)">
+    <meta name="description" content="FAQ Accordion Card">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link href="styles.css" rel="stylesheet" type="text/css">
+    <title>FAQ Accordion Card</title>
+  </head>
+<body>
+  
+  <div class="card">
+    <img srcset="images/illustration-woman-online-mobile.svg 150w, images/illustration-woman-online-desktop.svg 768w" sizes="(max-width: 767px) 150px, (min-width: 768px) 768px" alt="woman online">
+    <div class="text">
+      <h1>FAQ</h1>
+      <div class="faq">
+        <div class="question">
+          <div class="flex">
+            <p>How many team members can I invite?</p>
+            <img src="images/icon-arrow-down.svg" alt="down arrow" class="arrow">
+          </div>
+          <p>You can invite as many team members as you would like.</p>
+        </div>
+        <div class="question">
+          <div class="flex">
+            <p>What is the maximum file upload size?</p>
+            <img src="images/icon-arrow-down.svg" alt="down arrow" class="arrow">
+          </div>
+          <p>No more than 2GB. All files in your account must fit your allotted storage space.</p>
+        </div>
+        <div class="question">
+          <div class="flex">
+            <p>How do I reset my password?</p>
+            <img src="images/icon-arrow-down.svg" alt="down arrow" class="arrow">
+          </div>
+          <p>Just click on the "Forgot Password" link and you should receive an email with further instructions.</p>
+        </div>
+        <div class="question">
+          <div class="flex">
+            <p>Can I cancel my subscription?</p>
+            <img src="images/icon-arrow-down.svg" alt="down arrow" class="arrow">
+          </div>
+          <p>You can cancel your subscription by emailing us <a href="mailto:testemail@email.com">here</a>.</p>
+        </div>
+        <div class="question">
+          <div class="flex">
+            <p>Do you provide additional support?</p>
+            <img src="images/icon-arrow-down.svg" alt="down arrow" class="arrow">
+          </div>
+          <p>We do provide additional support that you can find <a href="">here</a>.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const question = document.getElementsByClassName("flex");
+    const arrow = document.querySelector(".arrow");
+
+    for (i = 0; i < question.length; i++) {
+      question[i].addEventListener("click", function() {
+        
+        const answer = this.nextElementSibling;
+        const arrow = document.querySelector(".arrow");
+
+        if (answer.style.display === "block") {
+          answer.style.display = "none";
+          this.style.fontWeight = "400";
+          this.querySelector(".arrow").style.transform = "rotate(0deg)";
+        } else {
+          answer.style.display = "block";
+          this.style.fontWeight = "bold";
+          this.querySelector(".arrow").style.transform = "rotate(180deg)";
+        }
+      });
+    }
+
+  </script>
+
+</body>
+</html>
